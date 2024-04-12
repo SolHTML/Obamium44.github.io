@@ -1,6 +1,7 @@
 body {
     font-family:'Courier New', Courier, monospace;
     text-align: center;
+    background: linear-gradient(to right, #850d6b, #410a41);;
 }
 
 #board {
@@ -18,9 +19,9 @@ body {
 }
 
 .banner {
-    width: 100vw;
-    height: 99.95vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(https://i.ibb.co/Gd8XfzH/pixelcut-export.jpg);
+    width: 99.55vw;
+    height: 96.65vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(/WB.jpeg);
     background-size: cover; 
     background-position: center;
 }
