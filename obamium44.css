@@ -1,0 +1,138 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#board {
+    display: block;
+    background-image: url("./flappybirdbg.png");
+    margin: 0;
+    padding: 0;
+    /* Adjust the width and height of the canvas as needed */
+    width: 360px; /* Example width */
+    height: 640px; /* Example height */
+    /* Position the canvas on the left side */
+    position: absolute;
+    left: 325px;
+    top: 200px; /* Adjust if necessary */
+}
+
+.banner {
+    width: 99.55vw;
+    height: 98vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(pixelcut-export.jpeg);
+    background-size: cover; 
+    background-position: center;
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Added position relative */
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    margin-left: 50%;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin: 0 20px;
+    position: relative;
+}
+
+/* Style the navbar links */
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Style the link underline */
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #4B0076;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: width 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.header {
+    overflow: hidden;
+    background-image: linear-gradient(to right, #850d6b, #410a41); /* Gradient background */
+    display: flex;
+    align-items: center;
+    height: 125px; /* Set the height of the header */
+}
+.header img.logo {
+    height: 75%; /* Set the height of the image to 100% of the parent container (the header) */
+    width: auto; /* Allow the width to adjust proportionally */
+    display: block; /* Ensure the image is displayed as a block element */
+    margin-left: 75px; /* Add margin for spacing */
+}
+
+.header a:hover {
+    background-color: #410a41;
+
+}
+
+/* Style the active/current link */
+.header a.active {
+    background-color: dodgerblue;
+    color: rgb(70, 12, 65);
+}
+
+/* Float the link section to the right */
+.header-right {
+    margin-left: auto;
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 500px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .header-right {
+        margin-left: 0;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header a {
+        display: block;
+        text-align: center;
+    }
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 90px;
+    margin-top: 80px;
+    margin-left: 1225px;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    margin-top: 0px;
+    margin-left: 1250px;
+}
