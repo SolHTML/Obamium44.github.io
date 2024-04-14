@@ -111,11 +111,15 @@ function update(timestamp) {
 
     //score
     context.fillStyle = "white";
-    context.font="45px sans-serif";
+    context.font="35px sans-serif";
     context.fillText(score, 5, 45);
 
     if (gameOver) {
-        context.fillText("GAME OVER", 5, 90);
+        context.fillStyle = "red";
+        context.fillText("GAME OVER", 75, 90);
+        context.fillStyle = "white";
+        context.fillText("CLICK SPACEBAR", 35, 150);
+        context.fillText("TO RESTART", 75, 180);
     }
 }
 
@@ -184,8 +188,22 @@ function moveBird(e) {
 
 
 function detectCollision(a, b) {
-    return a.x < b.x + b.width &&   //a's top left corner doesn't reach b's top right corner
-           a.x + a.width > b.x &&   //a's top right corner passes b's top left corner
-           a.y < b.y + b.height &&  //a's top left corner doesn't reach b's bottom left corner
-           a.y + a.height > b.y;    //a's bottom left corner passes b's top left corner
+    // Calculate the center of the bird and each pipe
+    let birdCenterX = a.x + a.width / 2;
+    let birdCenterY = a.y + a.height / 2;
+    let pipeCenterX = b.x + b.width / 2;
+    let pipeCenterY = b.y + b.height / 2;
+
+    // Calculate the distance between the centers of the bird and pipe
+    let distanceX = Math.abs(birdCenterX - pipeCenterX);
+    let distanceY = Math.abs(birdCenterY - pipeCenterY);
+
+    // Check if the distance is less than the sum of the radii (or half widths/heights) of the bird and pipe
+    if (distanceX < (a.width / 2 + b.width / 2) && distanceY < (a.height / 2 + b.height / 2)) {
+        // Collison detected
+        return true;
+    }
+
+    // No collision
+    return false;
 }
